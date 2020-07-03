@@ -10,7 +10,7 @@ let totalbyplayerteam2:number[];
  let celli:number=10;
  function setcountvalue()
     {
-        count=60;
+        count=10;
     }
     function  desccount()
     {
