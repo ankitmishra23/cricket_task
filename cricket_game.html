@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="cricket.js"></script>
+  
+</head>
+<body>
+
+<div class="container-fluid bg-primary text-white text-center">
+  <h1>CRICKET MATCH</h1>
+</div>
+<div class="container-sm bg-primary text-white text-center" style="height: 60px; width: 200px;position: relative;left:-400px;text-align: center;padding-top: 10px;">
+<h3>TEAM 1</h3>
+<h3 style="color: black;position: relative; top:10px;" id="scoreteam1">0</h3>
+<button type="button" class="btn btn-danger text-white" style="height: 50px; width: 50px;"  onclick='desccount()' id="hitbutton1">HIT</button>
+</div>
+<div style="height: 60px;width: 200px;position: relative; top: -50px; left:650px"><h3 style="text-align: center;">TIMER</h3><h3 style="text-align: center;" id="counter">10</h3></div>
+<div class="container-sm bg-primary text-white text-center" style="height: 60px; width: 200px;position: relative;left:-200px;top:-120px;text-align: center;padding-top: 10px; float: right;">
+    <h3>TEAM 2</h3>
+    <h3 style="color: black; position: relative;top: 10px;" id="scoreteam2">0</h3>
+    <button type="button" class="btn btn-danger text-white" style="height: 50px; width: 50px;" id="hitbutton2" onclick='desccount2()'>HIT</button>
+    </div>
+    <hr style="position: relative; top:20px; font-weight: bolder;"> 
+    <div style="height: 300px; width: 500px;position: relative; top: 10px;">
+        <div class="table">
+            <table class="table table-bordered" id="mytable">
+              <thead>
+                <tr>
+                  <th>Team 1</th>
+                  <th>B1</th>
+                  <th>B2</th>
+                  <th>B3</th>
+                  <th>B4</th>
+                  <th>B5</th>
+                  <th>B6</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+    </div>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" style="height: 50px; width: 200px;font-size: 30px; text-align: center; position: relative; top:-250px; left: 650px;" id="generate" onclick='generate_result()'>Generate Result</button>
+        <h4 style="position: relative; top: -240px; left: 675px;">Match Won By</h4>
+        <h4 style="position: relative; top: -240px; left: 720px;" id="won"></h4>
+        <hr style="width: 200px;position: relative;top:-250px ; left: -10px;">
+        <h4 style="position: relative; top: -240px; left: 650px;">Man Of The Match</h4>
+        <h4 style="position: relative; top: -240px; left: 720px;" id="man_of_the_match"></h4>
+        <h4 style="position: relative; top: -240px; left: 720px;" id="man_match_team"></h4>
+        <h4 style="position: relative; top: -240px; left: 720px;" id="maxscore"></h4>
+    </div>
+    <div style="height: 300px; width: 500px;position: relative; top: -438px; float: right;">
+    <div class="table">
+        <table class="table table-bordered" id="myTable">
+          <thead>
+            <tr>
+              <th>Team 2</th>
+              <th>B1</th>
+              <th>B2</th>
+              <th>B3</th>
+              <th>B4</th>
+              <th>B5</th>
+              <th>B6</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+</div>
+</div>
+</body>
+</html>

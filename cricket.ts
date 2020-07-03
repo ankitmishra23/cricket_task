@@ -1,13 +1,17 @@
 
  let count:number;
- let totalbyplayerteam1:number[];
-let totalbyplayerteam2:number[];
+ let b:number;
+ let a:number;
  let runbyplayer:number;
  let wicket:number;
  let run:number;
- let teamtotal1:number=200;
- let teamtotal2:number=300;
+ let teamtotal1:number;
+ let teamtotal2:number;
  let celli:number=10;
+ let maxrun1=0;
+ let maxrun2=0;
+ let counter1:string;
+ let counter2:string;
  function setcountvalue()
     {
         count=10;
@@ -40,6 +44,7 @@ let totalbyplayerteam2:number[];
                 }
             }
         },1000);
+        
     }
     function desccount2()
     {
@@ -100,6 +105,18 @@ function myFunction2() {
                 cell7.innerHTML=" "+run();
                 let sum=(Number(cell2.innerHTML)+Number(cell3.innerHTML)+Number(cell4.innerHTML)+Number(cell5.innerHTML)+Number(cell6.innerHTML)+Number(cell7.innerHTML));
                 cell8.innerHTML=" "+sum;
+                console.log(sum);
+                let newsum=Number(document.getElementById("scoreteam1").innerHTML)+sum
+                document.getElementById("scoreteam1").innerHTML=""+newsum;
+                teamtotal1=newsum;
+                if(maxrun1<sum)
+                {
+                    maxrun1=sum;
+                    counter1=cell1.innerHTML;
+                    console.log(counter1);
+                    console.log("max="+maxrun1);
+                }
+                            
         
         
     }
@@ -133,6 +150,19 @@ function myFunction() {
                 cell7.innerHTML=" "+run();
                 let sum=(Number(cell2.innerHTML)+Number(cell3.innerHTML)+Number(cell4.innerHTML)+Number(cell5.innerHTML)+Number(cell6.innerHTML)+Number(cell7.innerHTML));
                 cell8.innerHTML=" "+sum;
+                console.log(sum);
+                let newsum=Number(document.getElementById("scoreteam2").innerHTML)+sum
+                document.getElementById("scoreteam2").innerHTML=""+newsum;
+                teamtotal2=newsum;
+                if(maxrun2<sum)
+                {
+                    maxrun2=sum;
+                    counter2=cell1.innerHTML;
+                    console.log(counter2);
+                    console.log("max="+maxrun2);
+                }              
+                    
+                
         
     }
     cellvalue();
@@ -141,9 +171,16 @@ function myFunction() {
 
 function generate_result()
 {
+
+
     (teamtotal1>teamtotal2)?(document.getElementById("won").innerHTML="Team 1"):(document.getElementById("won").innerHTML="Team 2");
+    (maxrun1>maxrun2)?(document.getElementById("man_of_the_match").innerHTML=counter1):(document.getElementById("man_of_the_match").innerHTML=counter2);
+
+    (maxrun1>maxrun2)?(document.getElementById("man_match_team").innerHTML="Team 1"):(document.getElementById("man_match_team").innerHTML="Team 2");
+
+    (maxrun1>maxrun2)?(document.getElementById("maxscore").innerHTML=String(maxrun1)):(document.getElementById("maxscore").innerHTML=String(maxrun2)); 
+
+    document.getElementById("myTable")?.setAttribute("style","position:relative; top:-145px");
+    
 
 }
-
-
-
