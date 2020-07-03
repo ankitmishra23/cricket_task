@@ -8,7 +8,7 @@ var teamtotal1 = 200;
 var teamtotal2 = 300;
 var celli = 10;
 function setcountvalue() {
-    count = 60;
+    count = 10;
 }
 function desccount() {
     setcountvalue();
